@@ -117,6 +117,13 @@ alias tk='tmux kill-session -t'
 
 alias vim='nvim'
 
+
+hlcursor() {
+  export PYTHONPATH="$(git rev-parse --show-toplevel)"
+  source ~/projects/hyper-gsa/.venv/bin/activate
+  cursor .
+}
+
 if ! pgrep -q ssh-agent; then
     # Start ssh-agent
     eval "$(ssh-agent -s)"
