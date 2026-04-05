@@ -159,3 +159,11 @@ set_tmux_window_name() {
 
 # Add the function to the precmd hooks
 add-zsh-hook precmd set_tmux_window_name
+export AWS_DEFAULT_REGION=us-east-1
+
+# Source machine-local config (secrets, tokens, local overrides)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+
+# Claude Code yolo mode — skip permission prompts, rely on deny rules + /sandbox
+alias claude-yolo="claude --dangerously-skip-permissions"
